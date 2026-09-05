@@ -141,6 +141,7 @@ binary_res <- SFinx_BO(
 # Render multi-panel output
 print(binary_res$combined)
 ```
+![Binary Operators Crosstalk](https://github.com/mortezahaji/SFinxSDFA/blob/main/images/Binary_Operators_Plot.png)
 
 ### 5. Fit Spatial Functional Regression (FOF_fit)
 
@@ -157,6 +158,11 @@ sdfa_fit <- FOF_fit(
   grid_n    = grid_resolution      # Grid dimension (30x30)
 )
 ```
+
+<p float="left">
+  <img src="https://github.com/mortezahaji/SFinxSDFA/blob/main/images/3D_Coefficient_Surface.png" width="48%" />
+  <img src="https://github.com/mortezahaji/SFinxSDFA/blob/main/images/Interactive_3D_Surface.html" width="48%" />
+</p>
 
 ### 6. Extract Surface Coefficients & Generate 3D Plots
 
