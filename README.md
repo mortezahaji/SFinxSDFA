@@ -159,12 +159,12 @@ sdfa_fit <- FOF_fit(
 )
 ```
 
-<a href="https://mortezahaji.github.io/SFinxSDFA/images/3d_surface_plotly.html.html" target="_blank">
+<a href="https://mortezahaji.github.io/SFinxSDFA/images/3d_surface_plotly.html" target="_blank">
   <img src="images/3d_coefficient_surface.png" width="100%" alt="Click for 3D Interactive Surface" />
 </a>
 
 <p align="center">
-  👉 <b><a href="https://mortezahaji.github.io/SFinxSDFA/images/3d_surface_plotly.html.html">Launch Interactive 3D Surface Model in Browser</a></b>
+  👉 <b><a href="https://mortezahaji.github.io/SFinxSDFA/images/3d_surface_plotly.html">Launch Interactive 3D Surface Model in Browser</a></b>
 </p>
 
 ### 6. Extract Surface Coefficients & Generate 3D Plots
