@@ -97,7 +97,8 @@ An automated platform for spatial functional modeling and
 fingerprint analysis of tissue molecular landscapes. bioRxiv
 2026.07.15.738836; doi: https://doi.org/10.64898/2026.07.15.738836
 
-#BibTeX
+# BibTeX
+
 @article{Hajihosseini2026SFinx,
   author    = {Hajihosseini, Morteza and Patino-Martinez, Eduardo and Ghosal, Rahul and Kaplan, Mariana J. and Pyne, Saumyadipta},
   title     = {An automated platform for spatial functional modeling and fingerprint analysis of tissue molecular landscapes},
