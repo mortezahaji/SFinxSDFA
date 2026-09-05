@@ -77,3 +77,21 @@ binary_res <- SFinx_BO(
 # Display arranged multi-panel plot
 print(binary_res$combined)
 ```
+
+### Spatial Function-on-Function Regression (SDFA)
+Fit a spatially varying coefficient GAM with tensor product splines ($k=20$) to model continuous pathway interactions across coordinates:
+
+``` r
+# Fit spatial functional regression model
+sdfa_fit <- FOF_fit(
+  Data      = combined_df, 
+  Response  = "HP_LUPUS_NEPHRITIS", 
+  Predictor = "GOBP_REGULATION_OF_NEUTROPHIL_ACTIVATION", 
+  k         = 20, 
+  grid_n    = 50
+)
+
+# Extract spatial effect surface and significance mask
+beta_matrix <- sdfa_fit$beta_surface
+sig_mask    <- sdfa_fit$significance_mask
+```
