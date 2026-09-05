@@ -223,14 +223,14 @@ Saving 2D Plots (SFinx_UO & SFinx_BO) with ggsave
 ggplot2::ggsave(
   filename = "Unary_Operator_Plot.png", 
   plot     = u_plot, 
-  width    = 8, 
+  width    = 10, 
   height   = 6, 
   dpi      = 300
 )
 
 # Save Binary Operators multi-panel output
 ggplot2::ggsave(
-  filename = "Binary_Operators_Plot.pdf", 
+  filename = "Binary_Operators_Plot.png", 
   plot     = binary_res$combined, 
   width    = 12, 
   height   = 10
