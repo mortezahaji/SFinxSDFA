@@ -122,6 +122,8 @@ u_plot <- SFinx_UO(
 print(u_plot)
 ```
 
+![Unary Operator Surface](images/unary_operator.png)
+
 ### 4. Test Binary Operators (SFinx_BO)
 
 ``` r
