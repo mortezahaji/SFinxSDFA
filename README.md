@@ -38,6 +38,7 @@ remotes::install_github("mortezahaji/SFinxSDFA")
 ```
 
 # Complete End-to-End Example
+
 The following script runs a synthetic spatial transcriptomics workflow covering:
 
 - **Compatibility patching (ggpubr & ggplot2 bindings).**
@@ -52,10 +53,9 @@ The following script runs a synthetic spatial transcriptomics workflow covering:
 
 - **3D Interactive & Static Coefficient Surface Plotting.**
 
+### 1. Load Libraries & Apply Patches
+
 ``` r
-# ==============================================================================
-# 1. Load Libraries & Apply Patches
-# ==============================================================================
 library(SFinxSDFA)
 library(ggplot2)
 library(ggpubr)
@@ -77,10 +77,11 @@ body(SFinx_BO) <- parse(text = body_BO_fixed)
 
 # Create 1x1 blank image matrix for runs without histology images
 blank_image <- matrix("#FFFFFF", nrow = 1, ncol = 1)
+```
 
-# ==============================================================================
-# 2. Generate Synthetic Dataset
-# ==============================================================================
+### 2. Generate Synthetic Dataset
+
+``` r
 n_spots <- 150
 
 # Spatial coordinates MUST be named Longitude and Latitude for FOF_fit
@@ -97,10 +98,11 @@ normalized_scores <- data.frame(
 
 # Merged data frame for SDFA regression modeling
 combined_df <- cbind(spatial_coords, normalized_scores)
+```
 
-# ==============================================================================
-# 3. Test Unary Operator (SFinx_UO)
-# ==============================================================================
+### 3. Test Unary Operator (SFinx_UO)
+
+``` r
 cat("--- Running Unary Operator (SFinx_UO) ---\n")
 
 u_plot <- SFinx_UO(
@@ -114,10 +116,11 @@ u_plot <- SFinx_UO(
 
 # Render plot output
 print(u_plot)
+```
 
-# ==============================================================================
-# 4. Test Binary Operators (SFinx_BO)
-# ==============================================================================
+### 4. Test Binary Operators (SFinx_BO)
+
+``` r
 cat("--- Running Binary Operators (SFinx_BO) ---\n")
 
 binary_res <- SFinx_BO(
@@ -131,10 +134,11 @@ binary_res <- SFinx_BO(
 
 # Render multi-panel output
 print(binary_res$combined)
+```
 
-# ==============================================================================
-# 5. Fit Spatial Functional Regression (FOF_fit)
-# ==============================================================================
+### 5. Fit Spatial Functional Regression (FOF_fit)
+
+``` r
 cat("--- Fitting SDFA Spatial Model ---\n")
 
 grid_resolution <- 30 # Resolution of spatial prediction surface
@@ -146,10 +150,11 @@ sdfa_fit <- FOF_fit(
   k         = 12,                  # Spline basis dimension
   grid_n    = grid_resolution      # Grid dimension (30x30)
 )
+```
 
-# ==============================================================================
-# 6. Extract Surface Coefficients & Generate 3D Plots
-# ==============================================================================
+### 6. Extract Surface Coefficients & Generate 3D Plots
+
+``` r
 # Extract the estimated spatio-temporal coefficient matrix beta(s_1, s_2)
 beta_matrix <- sdfa_fit$beta_surface 
 
@@ -157,7 +162,7 @@ beta_matrix <- sdfa_fit$beta_surface
 grid_x <- seq(min(combined_df$Longitude), max(combined_df$Longitude), length.out = grid_resolution)
 grid_y <- seq(min(combined_df$Latitude),  max(combined_df$Latitude),  length.out = grid_resolution)
 
-# --- 6A. Interactive 3D Plot (Plotly) ---
+# Interactive 3D Plot (Plotly)
 p_3d_interactive <- plot_ly(
   x = ~grid_x, 
   y = ~grid_y, 
@@ -180,7 +185,7 @@ p_3d_interactive <- plot_ly(
 
 print(p_3d_interactive)
 
-# --- 6B. Static 3D Perspective Plot (persp) ---
+# Static 3D Perspective Plot (persp)
 ncz <- ncol(beta_matrix)
 nrz <- nrow(beta_matrix)
 zfacet <- beta_matrix[-1, -1] + beta_matrix[-1, -ncz] + beta_matrix[-nrz, -1] + beta_matrix[-nrz, -ncz]
@@ -204,6 +209,7 @@ persp(
 ```
 
 ### Exporting & Saving Generated Figures
+
 Depending on whether your output is a ggplot2 object, a static 3D graphics device object, or an interactive plotly surface, use the following methods to export high-resolution publication figures:
 
 Saving 2D Plots (SFinx_UO & SFinx_BO) with ggsave
@@ -226,6 +232,7 @@ ggplot2::ggsave(
   height   = 10
 )
 ```
+
 Saving Static 3D Perspective Plots
 
 ``` r
@@ -245,6 +252,7 @@ persp(
 
 dev.off() # Close graphics device to write file
 ```
+
 Saving Interactive 3D Plots
 
 ``` r
@@ -264,11 +272,8 @@ plotly::save_image(
 )
 ```
 
-
 # Citation
+
 ### If you use SFinxSDFA in your research, please cite our preprint
 
-Hajihosseini, M., Patino-Martinez, E., Ghosal, R., Kaplan, M. J., & Pyne, S. (2026).
-An automated platform for spatial functional modeling and
-fingerprint analysis of tissue molecular landscapes. bioRxiv
-2026.07.15.738836; doi: https://doi.org/10.64898/2026.07.15.738836
+Hajihosseini, M., Patino-Martinez, E., Ghosal, R., Kaplan, M. J., & Pyne, S. (2026). An automated platform for spatial functional modeling and fingerprint analysis of tissue molecular landscapes. bioRxiv 2026.07.15.738836; doi: <https://doi.org/10.64898/2026.07.15.738836>
