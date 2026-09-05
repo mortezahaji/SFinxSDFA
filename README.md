@@ -60,4 +60,20 @@ u_plot <- SFinx_UO( Data = normalized_scores, Finpre = "GOBP_REGULATION_OF_NEUTR
 
 print(u_plot)
 ```
+### Compare Pathway Crosstalk (Binary Operators)
+Quantify co-localization, asymmetric activation, and dominance between two pathway fingerprints:
 
+``` r
+# Run Binary Operators (Union, Intersection, Difference, Dominance)
+binary_res <- SFinx_BO(
+  Data    = normalized_scores, 
+  Finpre1 = "GOBP_REGULATION_OF_NEUTROPHIL_ACTIVATION", 
+  Finpre2 = "HP_LUPUS_NEPHRITIS", 
+  Thresh  = 1.0, 
+  Pos     = spatial_coords, 
+  Image   = histology_image
+)
+
+# Display arranged multi-panel plot
+print(binary_res$combined)
+```
