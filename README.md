@@ -44,9 +44,9 @@ if (!requireNamespace("remotes", quietly = TRUE)) {
 remotes::install_github("mortezahaji/SFinxSDFA")
 ```
 
-## Quick Start
+## Quick Start Example
 
-Evaluate Single Pathway Fingerprints (Unary Operator)
+# Evaluate Single Pathway Fingerprints (Unary Operator)
 
 Evaluate spatial autocorrelation (Moran's $I$) and 2D density landscapes of active spots ($|Z| \ge 1.0$) over tissue histology:
 ``` r
@@ -54,9 +54,10 @@ library(SFinxSDFA)
 
 # Run Unary Analysis
 
-u_plot \<- SFinx_UO( Data = normalized_scores, Finpre = "GOBP_REGULATION_OF_NEUTROPHIL_ACTIVATION", Thresh = 1.0, Pos = spatial_coords, Image = histology_image, Title = "Neutrophil Activation Surface" )
+u_plot <- SFinx_UO( Data = normalized_scores, Finpre = "GOBP_REGULATION_OF_NEUTROPHIL_ACTIVATION", Thresh = 1.0, Pos = spatial_coords, Image = histology_image, Title = "Neutrophil Activation Surface" )
 
 # Render combined plot
 
 print(u_plot)
 ```
+
