@@ -44,8 +44,8 @@ if (!requireNamespace("remotes", quietly = TRUE)) {
 remotes::install_github("mortezahaji/SFinxSDFA")
 ```
 
-Quick Start Example1. 
-Evaluate Single Pathway Fingerprints (Unary Operator)Evaluate spatial autocorrelation (Moran's $I$) and 2D density landscapes of active spots ($|Z| \ge 1.0$) over tissue histology:
+#Quick Start Example1. 
+\## Evaluate Single Pathway Fingerprints (Unary Operator)Evaluate spatial autocorrelation (Moran's $I$) and 2D density landscapes of active spots ($|Z| \ge 1.0$) over tissue histology:
 ``` r
 library(SFinxSDFA)
 
