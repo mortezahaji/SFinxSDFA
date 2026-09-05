@@ -98,6 +98,10 @@ normalized_scores <- data.frame(
 
 # Merged data frame for SDFA regression modeling
 combined_df <- cbind(spatial_coords, normalized_scores)
+
+# Add x and y aliases to spatial_coords
+spatial_coords$x <- spatial_coords$Longitude
+spatial_coords$y <- spatial_coords$Latitude
 ```
 
 ### 3. Test Unary Operator (SFinx_UO)
