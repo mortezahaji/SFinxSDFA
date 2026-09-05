@@ -17,9 +17,39 @@ By combining **Spatial Fingerprint Analytics (SFinx)** and **Spatial Functional 
 * **Spatial Operators:**
   * **Unary Operators:** Spatial autocorrelation (Moran's $I$), activation scaling ($|Z| \ge \text{threshold}$), and 2D kernel density estimations.
   * **Binary Operators:** Union, Intersection (Jaccard Index), Difference, and Maximum (Dominance) maps between pathway signatures.
-* **Spatial Functional Data Analysis (SDFA):** Continuous 2D surface modeling and Generalized Additive Models (GAMs) using tensor product B-splines (`mgcv::bam`)[cite: 3].
-* **Multi-Slice 3D Integration:** Evaluates spatial relationships across consecutive tissue sections while accounting for slice-specific random effects along the z-axis[cite: 3].
+* **Spatial Functional Data Analysis (SDFA):** Continuous 2D surface modeling and Generalized Additive Models (GAMs) using tensor product B-splines (`mgcv::bam`).
+* **Multi-Slice 3D Integration:** Evaluates spatial relationships across consecutive tissue sections while accounting for slice-specific random effects along the z-axis.
 
 ---
 
 ## Workflow Overview
+
+---
+
+## Installation
+
+Install the latest version directly from GitHub:
+
+```R
+# Install remotes if not already available
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+
+# Install SFinxSDFA
+remotes::install_github("mortezahaji/SFinxSDFA")
+
+library(SFinxSDFA)
+
+# Run Unary Analysis
+u_plot <- SFinx_UO(
+  Data   = normalized_scores, 
+  Finpre = "GOBP_REGULATION_OF_NEUTROPHIL_ACTIVATION", 
+  Thresh = 1.0, 
+  Pos    = spatial_coords, 
+  Image  = histology_image,
+  Title  = "Neutrophil Activation Surface"
+)
+
+# Render combined plot
+print(u_plot)
