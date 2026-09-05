@@ -159,10 +159,9 @@ sdfa_fit <- FOF_fit(
 )
 ```
 
-<p float="left">
-  <img src="https://github.com/mortezahaji/SFinxSDFA/blob/main/images/3D_Coefficient_Surface.png" width="48%" />
-  <img src="https://github.com/mortezahaji/SFinxSDFA/blob/main/images/Interactive_3D_Surface.html" width="48%" />
-</p>
+[![Interactive 3D Preview](images/3d_coefficient_surface.png)](https://mortezahaji.github.io/SFinxSDFA/images/Interactive_3D_Surface.html)
+
+> 💡 **Interactive View**: Click the image above or [open the 3D Interactive Surface](https://mortezahaji.github.io/SFinxSDFA/images/Interactive_3D_Surface.html) to zoom, rotate, and inspect spatial coefficients directly in your browser.
 
 ### 6. Extract Surface Coefficients & Generate 3D Plots
 
