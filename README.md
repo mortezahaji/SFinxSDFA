@@ -159,13 +159,6 @@ sdfa_fit <- FOF_fit(
 )
 ```
 
-<a href="https://htmlpreview.github.io/?https://github.com/mortezahaji/SFinxSDFA/blob/main/images/3d_surface_plotly.html" target="_blank">
-  <img src="images/3d_coefficient_surface.png" width="100%" alt="Click for 3D Interactive Surface" />
-</a>
-
-<p align="center">
-  👉 <b><a href="https://htmlpreview.github.io/?https://github.com/mortezahaji/SFinxSDFA/blob/main/images/3d_surface_plotly.html">Launch Interactive 3D Surface Model in Browser</a></b>
-</p>
 
 ### 6. Extract Surface Coefficients & Generate 3D Plots
 
@@ -222,6 +215,10 @@ persp(
   main = "3D Functional Coefficient Surface β(s1, s2)"
 )
 ```
+<p float="left">
+  <img src="images/3d_coefficient_surface.png" width="48%" />
+  <img src="images/3d_surface_plotly.png" width="48%" />
+</p>
 
 ### Exporting & Saving Generated Figures
 
