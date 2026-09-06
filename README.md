@@ -185,8 +185,8 @@ p_3d_interactive <- plot_ly(
   layout(
     title = list(text = "3D Spatially Varying Coefficient Surface β(s)"),
     scene = list(
-      xaxis = list(title = "Longitude (s1)"),
-      yaxis = list(title = "Latitude (s2)"),
+      xaxis = list(title = "Longitude"),
+      yaxis = list(title = "Latitude"),
       zaxis = list(title = "Beta Coefficient Value")
     )
   )
@@ -209,10 +209,10 @@ persp(
   col = terrain.colors(100)[facetcol],
   shade = 0.4,
   ticktype = "detailed",
-  xlab = "Longitude (s1)",
-  ylab = "Latitude (s2)",
+  xlab = "Longitude",
+  ylab = "Latitude",
   zlab = "Beta Coefficient",
-  main = "3D Functional Coefficient Surface β(s1, s2)"
+  main = "3D Functional Coefficient Surface β"
 )
 ```
 
