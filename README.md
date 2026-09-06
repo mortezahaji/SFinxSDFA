@@ -216,8 +216,7 @@ persp(
 )
 ```
 <p float="left">
-  <img src="images/3d_coefficient_surface.png" width="48%" />
-  <img src="images/3d_surface_plotly.png" width="48%" />
+  <img src="https://github.com/mortezahaji/SFinxSDFA/blob/main/images/3D_Coefficient_Surface.png" width="48%" />
 </p>
 
 ### Exporting & Saving Generated Figures
