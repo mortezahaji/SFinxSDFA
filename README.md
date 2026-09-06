@@ -215,9 +215,8 @@ persp(
   main = "3D Functional Coefficient Surface β(s1, s2)"
 )
 ```
-<p float="left">
-  <img src="https://github.com/mortezahaji/SFinxSDFA/blob/main/images/3D_Coefficient_Surface.png" width="48%" />
-</p>
+
+![FOF_fit](https://github.com/mortezahaji/SFinxSDFA/blob/main/images/3D_Coefficient_Surface.png)
 
 ### Exporting & Saving Generated Figures
 
